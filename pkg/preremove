@@ -1,0 +1,7 @@
+#!/bin/sh
+# Preremove script for PizzaFool
+# Remove the wrapper script from /usr/local/bin
+if [ -f /usr/local/bin/pizzafool ]; then
+    rm -f /usr/local/bin/pizzafool
+    echo "Removed /usr/local/bin/pizzafool wrapper"
+fi

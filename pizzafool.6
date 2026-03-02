@@ -1,0 +1,134 @@
+.\" @(#) pizzafool.6 1.0 26/03/01
+.\" Based on pizzatool.6 1.1 91/03/08 SMI
+.TH PIZZAFOOL 6 "1 March 2026" "CDE/Motif"
+.IX "pizzafool" "" "\fLpizzafool\fP \(em Mr. T's graphical pizza menu user interface"
+.SH NAME
+pizzafool \- I pity the fool who don't use this pizza program!
+.SH SYNOPSIS
+.B pizzafool
+.SH DESCRIPTION
+Listen up, sucka!
+.I PizzaFool
+is THE pizza ordering program, and Mr. T is your host.
+Some fool at Sun made a program called
+.IR PizzaTool (6)
+back in the day for that NeWS window system, but Mr. T don't mess with
+no NeWS \(em Mr. T uses Motif like a REAL man!
+You pick your toppings, you see your pizza, and Mr. T tells you
+what he thinks about your choices. And Mr. T ALWAYS tells you
+what he thinks, fool!
+.PP
+On the left side you got TWELVE topping checkboxes.
+Mr. T approves of Pepperoni, Mushrooms, Sausage, Extra Cheese, and Onions \(em
+those are toppings for people who ain't fools.
+Green Peppers, Black Olives, Jalape\361os, and BBQ Chicken are
+QUESTIONABLE \(em Mr. T's got his eye on you, sucka.
+And if you even THINK about clicking Pineapple, Anchovies, or
+Artichoke Hearts, I PITY YOU, FOOL!
+That ain't pizza, that's a CRIME!
+.PP
+Below the toppings you pick your size. You got four choices:
+Small is the Fool-size \(em that's for fools who don't know how to eat.
+Medium is the Sucka-size.
+Large is the Mr. T size, and that's the DEFAULT, because Mr. T
+don't eat no small pizza!
+Family is the A-Team size \(em that's when the whole team is hungry, sucka!
+.PP
+On the right side of the window, you see ME \(em Mr. T \(em
+in one of TWELVE different poses, rendered in 256 glorious colors.
+When you pick good toppings, Mr. T looks happy.
+When you pick questionable toppings, Mr. T gives you the LOOK.
+And when you pick something TERRIBLE like pineapple?
+Mr. T goes OFF, fool! You been warned!
+.PP
+Below my picture there's a text area where Mr. T delivers his
+wisdom about your pizza choices IN REAL TIME.
+You better read it, sucka!
+.PP
+At the bottom you got three buttons, and you better know which ones to press:
+.TP
+.B "Order Pizza, Fool!"
+This is the button for people who ain't cowards!
+Press it and Mr. T orders your pizza. Mr. T will tell you exactly
+what you ordered, and remind you to TIP THE DELIVERY DRIVER, fool!
+But if you press this with NO toppings selected, Mr. T is gonna
+let you KNOW what he thinks about that!
+.TP
+.B "Show Pizza, Fool!"
+Press this and a ROUND WINDOW pops up showing a picture of your pizza
+with all the toppings you picked! You change the toppings, the pizza
+changes too \(em it's LIVE, sucka! Mr. T don't show you no stale pizza!
+You can resize the window to get a closer look, because Mr. T
+believes in ATTENTION TO DETAIL!
+.TP
+.B "Quit (Coward!)"
+This button is for QUITTERS. Mr. T is disappointed in you if you
+press this, but Mr. T respects your freedom to be a coward. Go on, fool.
+.PP
+The pizza preview paints a real nice pizza with crust, sauce, cheese,
+and all your toppings spread out using some MATHEMATICS that Mr. T
+don't need to explain to you \(em just know it looks GOOD.
+The drawing code came from the original
+.I PizzaTool
+program, but Mr. T ported it from that fancy PostScript stuff to
+X11 drawing calls, because Mr. T don't need no stinkin' PostScript!
+.SH ENVIRONMENT
+.TP
+.B PIZZAFOOL_IMAGES
+This tells Mr. T where to find his twelve pictures, fool!
+If you don't set it, Mr. T looks in
+.BR ./images ,
+which is where a SMART person puts 'em.
+.TP
+.B DISPLAY
+The X display. You better HAVE one, fool!
+Mr. T needs an 8-bit PseudoColor visual with 256 colors,
+like what's on a real Sun framebuffer. Mr. T don't mess with
+no 24-bit TrueColor \(em 256 colors was good enough for the A-Team
+and it's good enough for YOU, sucka!
+.SH FILES
+.TP
+.B images/mrt_*.xpm
+Twelve pictures of Mr. T in XPM format. Every single one uses
+a shared 200-color palette with Floyd-Steinberg dithering, because
+Mr. T don't WASTE no colormap entries, fool!
+Mr. T is efficient. Be like Mr. T.
+.SH NOTES
+Mr. T built this program for Solaris 7 with CDE on his
+SPARCstation 4, and it runs on that sun4m hardware like a
+CHAMP. It loads XPM files WITHOUT libXpm \(em Mr. T wrote
+his OWN loader, because Mr. T don't depend on nobody!
+And when the colormap gets full (because CDE takes up
+about 56 colors like some kind of FOOL), Mr. T's program
+finds the NEAREST color instead of giving up. Mr. T
+NEVER gives up!
+.PP
+Mr. T rates every topping from 0 to 2 on the
+.I terribleness
+scale. Zero means Mr. T approves. One means Mr. T has
+his DOUBTS about you. Two means Mr. T PITIES you, fool!
+Pineapple, anchovies, and artichoke hearts are ALL twos.
+You been warned, sucka!
+.PP
+.I PizzaTool
+was made by some smart people at Sun for that NeWS window system.
+Mr. T RESPECTS those people \(em they had vision.
+.I PizzaFool
+is Mr. T's tribute to their work, rewritten from SCRATCH for
+Motif, because Mr. T builds things RIGHT!
+.SH SEE ALSO
+.IR pizzatool (6),
+.IR X (1),
+.IR mwm (1),
+.IR dtlogin (1)
+.SH BUGS
+There ain't no way to pay your tab. Mr. T says you better
+figure that out yourself, fool!
+.PP
+Mr. T cannot actually deliver pizza through your screen.
+Mr. T WISHES he could, but even Mr. T has limits. VERY FEW limits.
+.PP
+The pizza don't spin like it did in the original
+.IR PizzaTool .
+Mr. T don't need no spinning pizza \(em the pizza RESPECTS Mr. T
+enough to stay STILL!

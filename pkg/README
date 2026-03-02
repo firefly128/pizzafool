@@ -1,0 +1,7 @@
+This package requires the following to be installed:
+- CDE (SUNWdtbas) for Motif libraries
+- OpenWindows (SUNWxwplt) for X11 libraries
+
+These are standard on Solaris 7 with a default install.
+
+No third-party dependencies are required.

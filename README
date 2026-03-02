@@ -1,0 +1,52 @@
+PIZZAFOOL - Mr. T's Pizza Ordering System
+==========================================
+
+A parody of Sun Microsystems' PizzaTool, where Mr. T from the
+A-Team judges your pizza topping choices with varying degrees
+of disapproval.
+
+Built for Solaris 7 / CDE / Motif on real SPARC hardware.
+
+Features:
+  - 12 toppings with unique Mr. T reactions
+  - 4 pizza sizes (Fool-size through A-Team size)  
+  - 12 unique 256-color Mr. T cartoon images
+  - Custom XPM file loader (no libXpm needed!)
+  - Order summary with Mr. T commentary
+
+Requirements:
+  - Solaris 7 (or compatible) with CDE/Motif
+  - GCC (tgcware gcc47 or similar) or Sun Workshop cc
+  - X11 display (8-bit PseudoColor or better)
+
+Build:
+  make
+
+Run:
+  make run
+  
+  Or manually:
+  DISPLAY=:0 PIZZAFOOL_IMAGES=./images ./pizzafool
+
+The PIZZAFOOL_IMAGES environment variable tells PizzaFool where
+to find the Mr. T XPM image files. If not set, it looks for an
+"images" directory next to the binary.
+
+Files:
+  pizzafool.c     - Main source (includes built-in XPM parser)
+  Makefile        - Build for Solaris 7 / SPARC
+  images/         - 12 Mr. T cartoon poses in 256-color XPM format
+    mrt_point1.xpm    - Pointing at viewer
+    mrt_point2.xpm    - Pointing variant
+    mrt_point3.xpm    - Pointing variant
+    mrt_point4.xpm    - Pointing variant
+    mrt_thumbsup1.xpm - Thumbs up (approval)
+    mrt_thumbsup2.xpm - Thumbs up variant
+    mrt_thumbsup3.xpm - Thumbs up variant
+    mrt_angry1.xpm    - Angry fist
+    mrt_angry2.xpm    - Angry variant
+    mrt_crossed1.xpm  - Arms crossed (stern)
+    mrt_happy1.xpm    - Happy smiling
+    mrt_happy2.xpm    - Happy variant
+
+"I pity the fool who puts pineapple on pizza!" - Mr. T

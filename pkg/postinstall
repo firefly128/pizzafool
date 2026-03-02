@@ -1,0 +1,23 @@
+#!/bin/sh
+# postinstall script for PizzaFool
+# Creates a wrapper script in /usr/local/bin if it exists
+
+if [ -d /usr/local/bin ]; then
+    cat > /usr/local/bin/pizzafool << 'WRAPPER'
+#!/bin/sh
+# PizzaFool launcher - Mr. T's Pizza Ordering System
+PIZZAFOOL_IMAGES=/opt/pizzafool/share/images
+export PIZZAFOOL_IMAGES
+exec /opt/pizzafool/bin/pizzafool "$@"
+WRAPPER
+    chmod 755 /usr/local/bin/pizzafool
+fi
+
+echo ""
+echo "============================================"
+echo " PizzaFool installed successfully, fool!"
+echo ""
+echo " Run with: /opt/pizzafool/bin/pizzafool"
+echo " Man page: man -M /opt/pizzafool/man pizzafool"
+echo "============================================"
+echo ""
