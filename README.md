@@ -26,6 +26,8 @@ Built for **Solaris 7 / CDE / Motif** on real SPARC hardware (SPARCstation 4, su
 
 *Running on a real SPARCstation 4 with Solaris 7 and CDE*
 
+![PizzaFool on CDE Desktop](screenshots/pizzafool-cde-desktop.png)
+
 ## Building from Source
 
 ### Requirements
