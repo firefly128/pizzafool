@@ -1,40 +1,37 @@
-# PizzaFool 🍕
+# PizzaFool
 
-**"I pity the fool who puts pineapple on pizza!"** — Mr. T
+"I pity the fool who puts pineapple on pizza!" — Mr. T
 
-A Motif/X11 pizza ordering application inspired by Sun's classic [PizzaTool](https://en.wikipedia.org/wiki/NeWS) demo,
-reimagined with Mr. T as your pizza ordering advisor.
+A Motif/X11 pizza ordering application for Solaris 7 / CDE on SPARC hardware, inspired by Sun's classic PizzaTool demo from OpenWindows/NeWS. Mr. T serves as your pizza ordering advisor.
 
-Built for **Solaris 7 / CDE / Motif** on real SPARC hardware (SPARCstation 4, sun4m).
-
-![Section 6 Man Page](https://img.shields.io/badge/man-section%206-blue)
-![Solaris 7](https://img.shields.io/badge/Solaris-7-orange)
-![SPARC](https://img.shields.io/badge/arch-SPARC-green)
-![Motif](https://img.shields.io/badge/toolkit-Motif%2FX11-purple)
+Public repo: github.com/firefly128/pizzafool.
 
 ## Features
 
-- **12 toppings** with unique Mr. T reactions — from approval to full fury
-- **4 pizza sizes**: Fool-size, Sucka-size, Mr. T size, A-Team size
-- **Pizza preview window** with live-updating graphical pizza rendering
-- **12 Mr. T poses** in 256-color XPM, changing based on your topping choices
-- **Custom XPM loader** — no libXpm dependency
-- **Nearest-color allocation** — coexists gracefully with CDE's colormap on 8-bit displays
-- Pizza rendering ported from the original PizzaTool NeWS/PostScript code to X11
+- 12 toppings with unique Mr. T reactions based on a terribleness scale
+- 4 pizza sizes: Fool-size, Sucka-size, Mr. T size, A-Team size
+- Pizza preview window with live-updating graphical rendering
+- 12 Mr. T poses in 256-color XPM, changing based on topping choices
+- Custom XPM loader — no libXpm dependency required
+- Nearest-color allocation — coexists with CDE's colormap on 8-bit displays
+- Pizza rendering adapted from the original PizzaTool NeWS/PostScript code
 
-## Screenshots
+## Topping ratings
 
-*Running on a real SPARCstation 4 with Solaris 7 and CDE*
+| Rating | Toppings | Reaction |
+|--------|----------|----------|
+| 0 — Approved | Pepperoni, Mushrooms, Sausage, Extra Cheese, Onions | Respect |
+| 1 — Questionable | Green Peppers, Black Olives, Jalapenos, BBQ Chicken | Stern disapproval |
+| 2 — TERRIBLE | Pineapple, Anchovies, Artichoke Hearts | Full fury |
 
-![PizzaFool on CDE Desktop](screenshots/pizzafool-cde-desktop.png)
+Click "Show Pizza, Fool!" to open a preview window. Click "Order Pizza, Fool!" to place the order and receive Mr. T's wisdom about tipping delivery drivers.
 
-## Building from Source
+## Building from source
 
 ### Requirements
 
 - Solaris 7 (or compatible) with CDE/Motif installed
-- GCC (tgcware gcc47 recommended) or Sun Workshop cc
-- X11 display (8-bit PseudoColor or better)
+- GCC (TGCware gcc47 or Sunstorm GCC 11) or Sun Workshop cc
 
 ### Build
 
@@ -42,84 +39,63 @@ Built for **Solaris 7 / CDE / Motif** on real SPARC hardware (SPARCstation 4, su
 make
 ```
 
+The Makefile defaults to `/usr/tgcware/gcc47/bin/gcc`. Edit the `CC` variable to use a different compiler.
+
 ### Run
 
 ```sh
 DISPLAY=:0 PIZZAFOOL_IMAGES=./images ./pizzafool
 ```
 
-Or simply:
+Or:
 
 ```sh
 make run
 ```
 
-## Installing from Package
+## Installing from package
 
-Download the SVR4 package from the [Releases](../../releases) page:
+Download the SVR4 package from the [Releases](https://github.com/firefly128/pizzafool/releases) page:
 
 ```sh
-# As root:
-pkgadd -d pizzafool-1.0-sparc.pkg
+pkgadd -d SSTpzfol-1.0-sparc.pkg
 ```
 
 This installs to `/opt/pizzafool`. Run with:
 
 ```sh
-/opt/pizzafool/bin/pizzafool
+DISPLAY=:0 /opt/pizzafool/bin/pizzafool
 ```
 
 To remove:
 
 ```sh
-pkgrm JWpzfool
+pkgrm SSTpzfol
 ```
 
-## How It Works
+pizzafool is also available via spm:
 
-Select toppings from the checkboxes on the left. Mr. T rates each topping on a
-*terribleness* scale from 0-2:
+```sh
+spm install pizzafool
+```
 
-| Rating | Toppings | Mr. T's Reaction |
-|--------|----------|-----------------|
-| 0 (Approved) | Pepperoni, Mushrooms, Sausage, Extra Cheese, Onions | Respect |
-| 1 (Questionable) | Green Peppers, Black Olives, Jalapeños, BBQ Chicken | Stern disapproval |
-| 2 (TERRIBLE) | Pineapple, Anchovies, Artichoke Hearts | Full Mr. T fury |
-
-Click **"Show Pizza, Fool!"** to open a preview window with a graphical rendering
-of your pizza. The preview updates live as you change toppings and size.
-
-Click **"Order Pizza, Fool!"** to place your order and receive Mr. T's wisdom
-about tipping delivery drivers and eating every slice.
-
-## Technical Notes
+## Technical notes
 
 - Single-file C application (~1600 lines) with built-in XPM parser
 - 200-color shared palette across all 12 images, with Floyd-Steinberg dithering
 - Nearest-color fallback allocator handles full colormaps (CDE uses ~56 of 256 entries)
 - Pizza toppings rendered using uniform disc distribution (`sqrt(random)` for radius)
 - Double-buffered pizza preview via backing pixmap
+- Links against Motif (`-lXm`), Xt, and X11 — all standard on Solaris 7 with CDE
 
 ## Heritage
 
-[PizzaTool](https://en.wikipedia.org/wiki/NeWS) was a demo application included with
-Sun's OpenWindows, originally written for the NeWS window system. It featured a spinning
-pizza preview and topping selection. PizzaFool is an affectionate homage, rewritten from
-scratch for Motif/X11, with Mr. T providing the commentary that PizzaTool was missing.
+PizzaTool was a demo application shipped with Sun's OpenWindows, originally written for the NeWS window system. PizzaFool is an affectionate homage, rewritten from scratch for Motif/X11.
 
 ## License
 
-Public domain. I pity the fool who needs a license to order pizza.
+Public domain.
 
-## Man Page
+## Man page
 
-```
-$ man pizzafool
-PIZZAFOOL(6)                     Games Manual                     PIZZAFOOL(6)
-
-NAME
-       pizzafool - I pity the fool who don't use this pizza program!
-...
-```
-
-See `pizzafool.6` for the full man page, written in Mr. T's voice.
+See `pizzafool.6` for the man page (section 6, Games Manual), written in Mr. T's voice.
